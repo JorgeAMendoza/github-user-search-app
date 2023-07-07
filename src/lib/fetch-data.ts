@@ -1,4 +1,4 @@
-import type { FetchResponse } from '@/types/fetch';
+import type { FetchResponse } from '@/src/types/fetch';
 import axios from 'axios';
 
 const apiUrl = 'https://api.github.com/users/';
