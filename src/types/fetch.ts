@@ -12,3 +12,8 @@ export interface FetchResponse {
   blog: string | null;
   company: string | null;
 }
+
+export interface ErrorResponse {
+  message: string;
+  documentation_url: string;
+}
