@@ -1,12 +1,21 @@
 import { useState } from 'react';
 import searchIcon from '@/src/assets/icon-search.svg';
 
-const SearchBar = () => {
+interface SearchBarProps {
+  setUsername: React.Dispatch<string>;
+  loading: boolean;
+  error: Error | undefined;
+}
+
+const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
   const [input, setInput] = useState('');
 
   return (
     <form
       onSubmit={(e) => {
+        if (input === '') return;
+        setUsername(input);
+
         e.preventDefault();
       }}
     >
@@ -23,8 +32,7 @@ const SearchBar = () => {
         />
       </label>
 
-      {/* only render if error */}
-      {/* <p></p> */}
+      {error ? <p>{error.message}</p> : null}
 
       <button type="button">Search</button>
     </form>
