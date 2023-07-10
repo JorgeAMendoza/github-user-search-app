@@ -6,49 +6,55 @@ import {
   CompanyIcon,
 } from '@/src/components/Icons';
 
-type UserDisplayProps = Omit<FetchResponse, 'id'>;
+type UserDisplay = Omit<FetchResponse, 'id'>;
 
-const UserDisplay = (props: UserDisplayProps) => {
+interface UserDisplayProps {
+  userInfo: UserDisplay;
+}
+
+const UserDisplay = ({ userInfo }: UserDisplayProps) => {
   return (
     <section>
       <div>
-        <img src={props.avatar_url} alt={`github user ${props.login}`} />
+        <img src={userInfo.avatar_url} alt={`github user ${userInfo.login}`} />
         <div>
-          <h2>{props.name}</h2>
-          <p>{props.login}</p>
+          <h2>{userInfo.name}</h2>
+          <p>{userInfo.login}</p>
         </div>
-        <p>{props.created_at}</p>
-        <p>{props.bio}</p>
+        <p>{userInfo.created_at}</p>
+        <p>{userInfo.bio}</p>
       </div>
 
       <div>
         <p>
-          Repos: <span>{props.public_repos}</span>
+          Repos: <span>{userInfo.public_repos}</span>
         </p>
         <p>
-          Followers: <span>{props.followers}</span>
+          Followers: <span>{userInfo.followers}</span>
         </p>
         <p>
-          Following: <span>{props.following}</span>
+          Following: <span>{userInfo.following}</span>
         </p>
       </div>
 
       <div>
         <p>
           <LocationIcon />
-          {props.location ? props.location : 'Not Available'}
+          {userInfo.location ? userInfo.location : 'Not Available'}
         </p>
         <p>
           <TwitterIcon />
-          {props.twitter_username ? props.twitter_username : 'Not Available'}
+          {userInfo.twitter_username
+            ? userInfo.twitter_username
+            : 'Not Available'}
         </p>
         <p>
           <WebsiteIcon />
-          {props.blog ? props.blog : 'Not Available'}
+          {userInfo.blog ? userInfo.blog : 'Not Available'}
         </p>
         <p>
           <CompanyIcon />
-          {props.location ? props.location : 'Not Available'}
+          {userInfo.location ? userInfo.location : 'Not Available'}
         </p>
       </div>
     </section>
