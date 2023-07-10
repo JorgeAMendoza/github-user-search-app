@@ -44,13 +44,27 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
         </p>
         <p>
           <TwitterIcon />
-          {userInfo.twitter_username
-            ? userInfo.twitter_username
-            : 'Not Available'}
+          {userInfo.twitter_username ? (
+            <a
+              href={`https://twitter.com/${userInfo.twitter_username}`}
+              rel="noreferrer"
+              target="_blank"
+            >
+              {userInfo.twitter_username}
+            </a>
+          ) : (
+            'Not Available'
+          )}
         </p>
         <p>
           <WebsiteIcon />
-          {userInfo.blog ? userInfo.blog : 'Not Available'}
+          {userInfo.blog ? (
+            <a href={userInfo.blog} target="_blank" rel="noreferrer">
+              {userInfo.blog}
+            </a>
+          ) : (
+            'Not Available'
+          )}
         </p>
         <p>
           <CompanyIcon />
