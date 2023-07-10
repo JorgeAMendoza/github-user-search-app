@@ -11,6 +11,7 @@ export interface FetchResponse {
   location: string | null;
   blog: string | null;
   company: string | null;
+  name: string;
 }
 
 export interface ErrorResponse {
