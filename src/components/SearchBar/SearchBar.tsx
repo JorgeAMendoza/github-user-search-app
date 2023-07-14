@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import searchIcon from '@/src/assets/icon-search.svg';
+import style from './search-bar.module.css';
 
 interface SearchBarProps {
   setUsername: React.Dispatch<string>;
@@ -19,7 +20,11 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
         e.preventDefault();
       }}
     >
-      <img src={searchIcon} alt="" />
+      {loading ? (
+        <div className={style.loadingSpinner}></div>
+      ) : (
+        <img src={searchIcon} alt="" />
+      )}
       <label
         htmlFor="userSearch"
         aria-label="type in username to look for their profile on GitHub"
