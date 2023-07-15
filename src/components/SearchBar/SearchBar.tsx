@@ -14,10 +14,8 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
   return (
     <form
       onSubmit={(e) => {
-        if (input === '') return;
-        setUsername(input);
-
         e.preventDefault();
+        setUsername(input);
       }}
     >
       {loading ? (
@@ -28,18 +26,22 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
       <label
         htmlFor="userSearch"
         aria-label="type in username to look for their profile on GitHub"
+        data-testid="userSearchInput"
       >
         <input
           id="userSearch"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          placeholder="Search GitHub username..."
         />
       </label>
 
-      {error ? <p>{error.message}</p> : null}
+      {error ? <p data-testid="errorMessage">{error.message}</p> : null}
 
-      <button type="button">Search</button>
+      <button type="submit" data-testid="userSearchButton">
+        Search
+      </button>
     </form>
   );
 };

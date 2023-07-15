@@ -14,12 +14,16 @@ function App() {
       keepPreviousData: true,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      errorRetryCount: 0,
     }
   );
 
   return (
     <main>
       <h1>GitHub User Search App</h1>
+      <button data-testid="themeButton" type="button">
+        theme
+      </button>
       <SearchBar setUsername={setUser} loading={isLoading} error={error} />
       {data === undefined ? <p>loading...</p> : null}
       {data ? <UserDisplay userInfo={data} /> : null}

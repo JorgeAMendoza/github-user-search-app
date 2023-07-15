@@ -16,33 +16,41 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
   return (
     <section>
       <div>
-        <img src={userInfo.avatar_url} alt={`github user ${userInfo.login}`} />
+        <img
+          src={userInfo.avatar_url}
+          alt={`github user ${userInfo.login}`}
+          data-testid="userAvatar"
+        />
         <div>
-          <h2>{userInfo.name}</h2>
-          <p>{userInfo.login}</p>
+          <h2 data-testid="username">{userInfo.name}</h2>
+          <p data-testid="userhandle">@{userInfo.login}</p>
         </div>
-        <p>{userInfo.created_at}</p>
-        <p>{userInfo.bio}</p>
-      </div>
-
-      <div>
-        <p>
-          Repos: <span>{userInfo.public_repos}</span>
-        </p>
-        <p>
-          Followers: <span>{userInfo.followers}</span>
-        </p>
-        <p>
-          Following: <span>{userInfo.following}</span>
+        <p data-testid="userJoined">Joined {userInfo.created_at}</p>
+        <p data-testid="userBio">
+          {userInfo.bio ? userInfo.bio : 'This profile has no bio'}
         </p>
       </div>
 
       <div>
         <p>
+          Repos: <span data-testid="repoCount">{userInfo.public_repos}</span>
+        </p>
+        <p>
+          Followers:{' '}
+          <span data-testid="followersCount">{userInfo.followers}</span>
+        </p>
+        <p>
+          Following:{' '}
+          <span data-testid="followingCount">{userInfo.following}</span>
+        </p>
+      </div>
+
+      <div>
+        <p data-testid="userLocation">
           <LocationIcon />
-          {userInfo.location ? userInfo.location : 'Not Available'}
+          <span>{userInfo.location ? userInfo.location : 'Not Available'}</span>
         </p>
-        <p>
+        <p data-testid="userTwitter">
           <TwitterIcon />
           {userInfo.twitter_username ? (
             <a
@@ -56,7 +64,7 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
             'Not Available'
           )}
         </p>
-        <p>
+        <p data-testid="userBlog">
           <WebsiteIcon />
           {userInfo.blog ? (
             <a href={userInfo.blog} target="_blank" rel="noreferrer">
@@ -66,9 +74,9 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
             'Not Available'
           )}
         </p>
-        <p>
+        <p data-testid="userCompany">
           <CompanyIcon />
-          {userInfo.location ? userInfo.location : 'Not Available'}
+          <span>{userInfo.company ? userInfo.company : 'Not Available'}</span>
         </p>
       </div>
     </section>
