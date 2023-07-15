@@ -26,7 +26,9 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
           <p data-testid="userhandle">@{userInfo.login}</p>
         </div>
         <p data-testid="userJoined">Joined {userInfo.created_at}</p>
-        <p data-testid="userBio">{userInfo.bio}</p>
+        <p data-testid="userBio">
+          {userInfo.bio ? userInfo.bio : 'This profile has no bio'}
+        </p>
       </div>
 
       <div>
@@ -74,7 +76,7 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
         </p>
         <p data-testid="userCompany">
           <CompanyIcon />
-          <span>{userInfo.location ? userInfo.location : 'Not Available'}</span>
+          <span>{userInfo.company ? userInfo.company : 'Not Available'}</span>
         </p>
       </div>
     </section>

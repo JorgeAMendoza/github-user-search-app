@@ -50,8 +50,8 @@ describe('inital page load', () => {
     cy.get('@followersCount').should('have.text', '9709');
     cy.get('@followingCount').should('have.text', '9');
     cy.get('@userBio').should('contain.text', 'This profile has no bio');
-    cy.get('@userlocation').should('have.text', 'San Francisco');
-    cy.get('@userblog').should('have.text', 'https://github.blog');
+    cy.get('@userLocation').should('have.text', 'San Francisco');
+    cy.get('@userBlog').should('have.text', 'https://github.blog');
     cy.get('@userAvatar')
       .should('have.attr', 'src')
       .should('include', '583231');
