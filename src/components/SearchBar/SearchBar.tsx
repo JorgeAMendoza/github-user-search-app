@@ -41,7 +41,7 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
 
       {error ? <p>{error.message}</p> : null}
 
-      <button type="button" data-testid="userSearchButton">
+      <button type="submit" data-testid="userSearchButton">
         Search
       </button>
     </form>
