@@ -14,10 +14,9 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
   return (
     <form
       onSubmit={(e) => {
+        e.preventDefault();
         if (input === '') return;
         setUsername(input);
-
-        e.preventDefault();
       }}
     >
       {loading ? (
