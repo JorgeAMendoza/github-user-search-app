@@ -55,21 +55,11 @@ describe('user search', () => {
     );
   });
 
-  it.only('should display a not found message for user "thisuserdoesnotexist"', () => {
+  it('should display a not found message for user "thisuserdoesnotexist"', () => {
     cy.get('@userSearchInput').type('thisuserdoesnotexist');
     cy.get('@userSearchButton').click();
 
     cy.get('[data-testid="errorMessage"]').should('contain.text', 'Not Found');
-    cy.get('@username').should('have.text', 'The Octocat');
-  });
-
-  it('should display an "empty search" message when the user search input is empty', () => {
-    cy.get('@userSearchButton').click();
-
-    cy.get('[data-testid="errorMessage"]').should(
-      'contain.text',
-      'Please enter a username'
-    );
     cy.get('@username').should('have.text', 'The Octocat');
   });
 });

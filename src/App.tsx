@@ -14,6 +14,7 @@ function App() {
       keepPreviousData: true,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      errorRetryCount: 0,
     }
   );
 

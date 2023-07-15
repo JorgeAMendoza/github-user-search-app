@@ -15,7 +15,6 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        if (input === '') return;
         setUsername(input);
       }}
     >
@@ -38,7 +37,7 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
         />
       </label>
 
-      {error ? <p>{error.message}</p> : null}
+      {error ? <p data-testid="errorMessage">{error.message}</p> : null}
 
       <button type="submit" data-testid="userSearchButton">
         Search
