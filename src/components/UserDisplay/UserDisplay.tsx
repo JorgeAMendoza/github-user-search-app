@@ -25,7 +25,7 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
           <h2 data-testid="username">{userInfo.name}</h2>
           <p data-testid="userhandle">@{userInfo.login}</p>
         </div>
-        <p data-testid="userJoined">{userInfo.created_at}</p>
+        <p data-testid="userJoined">Joined {userInfo.created_at}</p>
         <p data-testid="userBio">{userInfo.bio}</p>
       </div>
 
