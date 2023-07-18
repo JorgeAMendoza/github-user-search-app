@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import fetchUserData from './lib/fetch-data';
 import type { FetchResponse } from './types/fetch';
 import UserDisplay from './components/UserDisplay/UserDisplay';
+import ThemeSwitch from './components/ThemeSwitch/ThemeSwitch';
 
 function App() {
   const [user, setUser] = useState('octocat');
@@ -21,9 +22,11 @@ function App() {
   return (
     <main>
       <h1>GitHub User Search App</h1>
-      <button data-testid="themeButton" type="button">
-        theme
-      </button>
+      <div>
+        <h2>Dev Finder</h2>
+        <ThemeSwitch />
+      </div>
+
       <SearchBar setUsername={setUser} loading={isLoading} error={error} />
       {data === undefined ? <p>loading...</p> : null}
       {data ? <UserDisplay userInfo={data} /> : null}
