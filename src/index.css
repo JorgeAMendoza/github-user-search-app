@@ -23,24 +23,31 @@ body {
 }
 
 body[data-theme='light'] {
-  background-color: #f6f8ff;
+  --background-color: #f6f8ff;
   --text-color: #4b6a9b;
   --text-color-dark: #2b3442;
   --text-color-light: #697c9a;
   --searchbar-background: #fefefe;
   --display-background: #fefefe;
   --repo-background: #f6f8ff;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  color-scheme: light;
 }
 
 body[data-theme='dark'] {
-  background-color: #141d2f;
+  --background-color: #141d2f;
   --text-color: #ffffff;
   --text-color-dark: #ffffff;
   --text-color-light: #ffffff;
   --searchbar-background: #1e2a47;
   --display-background: #1e2a47;
   --repo-background: #141d2f;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  color-scheme: dark;
 }
+
 img,
 svg,
 picture,
