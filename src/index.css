@@ -31,6 +31,7 @@ body[data-theme='light'] {
   --searchbar-background: #fefefe;
   --display-background: #fefefe;
   --repo-background: #f6f8ff;
+  --title-color: var(--text-color-dark);
   background-color: var(--background-color);
   color: var(--text-color);
   color-scheme: light;
@@ -44,6 +45,7 @@ body[data-theme='dark'] {
   --searchbar-background: #1e2a47;
   --display-background: #1e2a47;
   --repo-background: #141d2f;
+  --title-color: var(--text-color-dark);
   background-color: var(--background-color);
   color: var(--text-color);
   color-scheme: dark;
@@ -68,6 +70,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  font-family: inherit;
 }
 p,
 li,
