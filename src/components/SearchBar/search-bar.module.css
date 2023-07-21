@@ -24,6 +24,7 @@
   background-color: transparent;
   width: 100%;
   font-size: 1.3rem;
+  color: var(--light-text-color);
 }
 
 .searchBar input::placeholder {
