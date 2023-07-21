@@ -7,6 +7,47 @@
   }
 }
 
+.searchBar {
+  background-color: var(--searchbar-background);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  border-radius: 15px;
+  min-height: 6rem;
+  padding-left: 1.5rem;
+  padding-right: 0.7rem;
+  margin-block-start: 3.5rem;
+  gap: 0.9rem;
+}
+
+.searchBar input {
+  background-color: transparent;
+  width: 100%;
+  font-size: 1.3rem;
+}
+
+.searchBar input::placeholder {
+  color: var(--light-text-color);
+  outline: transparent;
+  font-size: 1.3rem;
+  text-overflow: ellipsis;
+}
+
+.searchBar button {
+  background-color: var(--primary);
+  font-weight: bold;
+  font-size: 1.4rem;
+  justify-content: end;
+  padding: 0.9em 1.2em;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.searchIcon img {
+  width: 2rem;
+  height: 2rem;
+}
+
 .loadingSpinner {
   animation: spinner 1.5s linear infinite;
   background-color: transparent;
