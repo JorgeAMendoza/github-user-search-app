@@ -5,6 +5,7 @@ import {
   WebsiteIcon,
   CompanyIcon,
 } from '@/src/components/Icons';
+import style from './user-display.module.css';
 
 type UserDisplay = Omit<FetchResponse, 'id'>;
 
@@ -14,22 +15,25 @@ interface UserDisplayProps {
 
 const UserDisplay = ({ userInfo }: UserDisplayProps) => {
   return (
-    <section>
-      <div>
+    <section className={style.userDisplay}>
+      <div className={style.userInfo}>
         <img
           src={userInfo.avatar_url}
           alt={`github user ${userInfo.login}`}
           data-testid="userAvatar"
         />
-        <div>
+        <div className={style.username}>
           <h2 data-testid="username">{userInfo.name}</h2>
           <p data-testid="userhandle">@{userInfo.login}</p>
         </div>
-        <p data-testid="userJoined">Joined {userInfo.created_at}</p>
-        <p data-testid="userBio">
-          {userInfo.bio ? userInfo.bio : 'This profile has no bio'}
+        <p className={style.userJoined} data-testid="userJoined">
+          Joined {userInfo.created_at}
         </p>
       </div>
+
+      <p data-testid="userBio">
+        {userInfo.bio ? userInfo.bio : 'This profile has no bio'}
+      </p>
 
       <div>
         <p>

@@ -1,0 +1,43 @@
+.userDisplay {
+  background-color: var(--display-background);
+  margin-block-start: 1.6rem;
+  border-radius: 15px;
+  padding: 2em 1.5em;
+}
+
+.userInfo {
+  display: grid;
+  grid-template-areas:
+    'image username'
+    'image joined';
+  grid-template-columns: auto 1fr;
+}
+
+.userInfo img {
+  border-radius: 50%;
+  width: 7rem;
+  aspect-ratio: 1/1;
+  grid-area: image;
+  margin-right: 1.9rem;
+}
+
+.username {
+  grid-area: username;
+  padding-top: 0.2rem;
+}
+
+.username h2 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.username p {
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.userJoined {
+  grid-area: joined;
+  font-size: 1.3rem;
+  padding-top: 0.5rem;
+}
