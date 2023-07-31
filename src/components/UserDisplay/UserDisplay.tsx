@@ -31,20 +31,20 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
         </p>
       </div>
 
-      <p data-testid="userBio">
+      <p className={style.userBio} data-testid="userBio">
         {userInfo.bio ? userInfo.bio : 'This profile has no bio'}
       </p>
 
-      <div>
+      <div className={style.userStats}>
         <p>
-          Repos: <span data-testid="repoCount">{userInfo.public_repos}</span>
+          Repos <span data-testid="repoCount">{userInfo.public_repos}</span>
         </p>
         <p>
-          Followers:{' '}
+          Followers{' '}
           <span data-testid="followersCount">{userInfo.followers}</span>
         </p>
         <p>
-          Following:{' '}
+          Following{' '}
           <span data-testid="followingCount">{userInfo.following}</span>
         </p>
       </div>

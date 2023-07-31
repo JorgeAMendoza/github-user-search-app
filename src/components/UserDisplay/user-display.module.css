@@ -41,3 +41,32 @@
   font-size: 1.3rem;
   padding-top: 0.5rem;
 }
+
+.userBio {
+  font-size: 1.3rem;
+  margin-block-start: 3.4rem;
+  line-height: 1.9;
+}
+
+.userStats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  background-color: var(--repo-background);
+  border-radius: 10px;
+  margin-block-start: 2.4rem;
+  min-height: 8.5rem;
+  padding-top: 1.2em;
+}
+
+.userStats p {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.userStats p span {
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: block;
+  margin-block-start: 0.5rem;
+}
