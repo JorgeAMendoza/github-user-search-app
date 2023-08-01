@@ -21,10 +21,14 @@
   box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
+.searchBar label {
+  container-type: inline-size;
+}
+
 .searchBar input {
   background-color: transparent;
   width: 100%;
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 4cqi, 1.8rem);
   color: var(--light-text-color);
   outline: transparent;
 }
@@ -32,7 +36,7 @@
 .searchBar input::placeholder {
   color: var(--light-text-color);
   outline: transparent;
-  font-size: 1.3rem;
+  font-size: inherit;
   text-overflow: ellipsis;
 }
 
