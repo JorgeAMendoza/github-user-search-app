@@ -13,6 +13,7 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
 
   return (
     <form
+      className={style.searchBar}
       onSubmit={(e) => {
         e.preventDefault();
         setUsername(input);
@@ -21,7 +22,9 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
       {loading ? (
         <div className={style.loadingSpinner}></div>
       ) : (
-        <img src={searchIcon} alt="" />
+        <div className={style.searchIcon}>
+          <img src={searchIcon} alt="" />
+        </div>
       )}
       <label
         htmlFor="userSearch"

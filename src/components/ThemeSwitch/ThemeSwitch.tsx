@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { MoonIcon, SunIcon } from '../Icons';
+import style from './theme-switch.module.css';
 
 const ThemeSwitch = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -17,6 +19,7 @@ const ThemeSwitch = () => {
   return (
     <div>
       <button
+        className={style.themeButton}
         data-testid="themeButton"
         type="button"
         onClick={() => {
@@ -25,7 +28,8 @@ const ThemeSwitch = () => {
         }}
         aria-label={`Toggle theme to ${theme === 'light' ? 'dark' : 'light'}}`}
       >
-        {theme === 'light' ? 'Dark' : 'Light'}
+        {theme === 'light' ? 'Dark' : 'Light'}{' '}
+        {theme === 'light' ? <MoonIcon /> : <SunIcon />}
       </button>
     </div>
   );

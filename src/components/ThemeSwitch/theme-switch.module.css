@@ -1,0 +1,10 @@
+.themeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  color: var(--text-color);
+}

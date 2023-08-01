@@ -15,11 +15,13 @@ html {
   line-height: 1.5;
 }
 body {
+  font-family: 'Space Mono', monospace;
   font-size: 1.6rem;
-  height: 100vh;
-  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 1.5rem;
 }
 
 body[data-theme='light'] {
@@ -30,6 +32,7 @@ body[data-theme='light'] {
   --searchbar-background: #fefefe;
   --display-background: #fefefe;
   --repo-background: #f6f8ff;
+  --title-color: var(--text-color-dark);
   background-color: var(--background-color);
   color: var(--text-color);
   color-scheme: light;
@@ -43,6 +46,7 @@ body[data-theme='dark'] {
   --searchbar-background: #1e2a47;
   --display-background: #1e2a47;
   --repo-background: #141d2f;
+  --title-color: var(--text-color-dark);
   background-color: var(--background-color);
   color: var(--text-color);
   color-scheme: dark;
@@ -67,6 +71,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  font-family: inherit;
 }
 p,
 li,
@@ -77,6 +82,4 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-  hyphens: auto;
 }

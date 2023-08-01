@@ -5,6 +5,7 @@ import {
   WebsiteIcon,
   CompanyIcon,
 } from '@/src/components/Icons';
+import style from './user-display.module.css';
 
 type UserDisplay = Omit<FetchResponse, 'id'>;
 
@@ -14,43 +15,62 @@ interface UserDisplayProps {
 
 const UserDisplay = ({ userInfo }: UserDisplayProps) => {
   return (
-    <section>
-      <div>
+    <section className={style.userDisplay}>
+      <div className={style.userInfo}>
         <img
           src={userInfo.avatar_url}
           alt={`github user ${userInfo.login}`}
           data-testid="userAvatar"
         />
-        <div>
+        <div className={style.username}>
           <h2 data-testid="username">{userInfo.name}</h2>
           <p data-testid="userhandle">@{userInfo.login}</p>
         </div>
-        <p data-testid="userJoined">Joined {userInfo.created_at}</p>
-        <p data-testid="userBio">
-          {userInfo.bio ? userInfo.bio : 'This profile has no bio'}
+        <p className={style.userJoined} data-testid="userJoined">
+          Joined {userInfo.created_at}
         </p>
       </div>
 
-      <div>
+      <p className={style.userBio} data-testid="userBio">
+        {userInfo.bio ? userInfo.bio : 'This profile has no bio'}
+      </p>
+
+      <div className={style.userStats}>
         <p>
-          Repos: <span data-testid="repoCount">{userInfo.public_repos}</span>
+          Repos <span data-testid="repoCount">{userInfo.public_repos}</span>
         </p>
         <p>
-          Followers:{' '}
+          Followers{' '}
           <span data-testid="followersCount">{userInfo.followers}</span>
         </p>
         <p>
-          Following:{' '}
+          Following{' '}
           <span data-testid="followingCount">{userInfo.following}</span>
         </p>
       </div>
 
-      <div>
-        <p data-testid="userLocation">
+      <div className={style.userLinks}>
+        <p
+          data-testid="userLocation"
+          data-active={userInfo.location ? true : false}
+        >
           <LocationIcon />
           <span>{userInfo.location ? userInfo.location : 'Not Available'}</span>
         </p>
-        <p data-testid="userTwitter">
+        <p data-testid="userBlog" data-active={userInfo.blog ? true : false}>
+          <WebsiteIcon />
+          {userInfo.blog ? (
+            <a href={userInfo.blog} target="_blank" rel="noreferrer">
+              {userInfo.blog}
+            </a>
+          ) : (
+            'Not Available'
+          )}
+        </p>
+        <p
+          data-testid="userTwitter"
+          data-active={userInfo.twitter_username ? true : false}
+        >
           <TwitterIcon />
           {userInfo.twitter_username ? (
             <a
@@ -64,17 +84,10 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
             'Not Available'
           )}
         </p>
-        <p data-testid="userBlog">
-          <WebsiteIcon />
-          {userInfo.blog ? (
-            <a href={userInfo.blog} target="_blank" rel="noreferrer">
-              {userInfo.blog}
-            </a>
-          ) : (
-            'Not Available'
-          )}
-        </p>
-        <p data-testid="userCompany">
+        <p
+          data-testid="userCompany"
+          data-active={userInfo.company ? true : false}
+        >
           <CompanyIcon />
           <span>{userInfo.company ? userInfo.company : 'Not Available'}</span>
         </p>

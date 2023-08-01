@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import SearchBar from './components/SearchBar/SearchBar';
 import useSWR from 'swr';
+import SearchBar from './components/SearchBar/SearchBar';
+import ThemeSwitch from './components/ThemeSwitch/ThemeSwitch';
+import UserDisplay from './components/UserDisplay/UserDisplay';
 import fetchUserData from './lib/fetch-data';
 import type { FetchResponse } from './types/fetch';
-import UserDisplay from './components/UserDisplay/UserDisplay';
-import ThemeSwitch from './components/ThemeSwitch/ThemeSwitch';
+import styled from './app.module.css';
 
 function App() {
   const [user, setUser] = useState('octocat');
@@ -20,10 +21,9 @@ function App() {
   );
 
   return (
-    <main>
-      <h1>GitHub User Search App</h1>
-      <div>
-        <h2>Dev Finder</h2>
+    <main className={styled.container}>
+      <div className={styled.header}>
+        <h1>devfinder</h1>
         <ThemeSwitch />
       </div>
 
