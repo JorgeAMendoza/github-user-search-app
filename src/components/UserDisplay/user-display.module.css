@@ -3,6 +3,7 @@
   margin-block-start: 1.6rem;
   border-radius: 15px;
   padding: 2em 1.5em;
+  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
 .userInfo {
@@ -69,4 +70,29 @@
   font-weight: bold;
   display: block;
   margin-block-start: 0.5rem;
+}
+
+.userLinks {
+  margin-block-start: 2.4rem;
+}
+
+.userLinks > *:not(:last-child) {
+  margin-block-end: 1.6rem;
+}
+
+.userLinks p {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  align-items: center;
+  font-size: 1.3rem;
+  gap: 0.7rem;
+}
+
+.userLinks p a {
+  color: var(--text-color-light);
+  text-decoration: none;
+}
+
+.userLinks p[data-active='false'] {
+  opacity: 0.5;
 }
