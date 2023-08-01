@@ -17,10 +17,11 @@ html {
 body {
   font-family: 'Space Mono', monospace;
   font-size: 1.6rem;
-  height: 100vh;
-  height: 100svh;
+  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 1.5rem;
 }
 
 body[data-theme='light'] {
