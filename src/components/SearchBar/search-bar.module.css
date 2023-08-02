@@ -18,7 +18,7 @@
   padding-right: 0.7rem;
   margin-block-start: 3.5rem;
   gap: 0.9rem;
-  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+  box-shadow: var(--box-shadow);
 }
 
 .searchBar label {
@@ -28,7 +28,7 @@
 .searchBar input {
   background-color: transparent;
   width: 100%;
-  font-size: clamp(1.3rem, 4cqi, 1.8rem);
+  font-size: clamp(1.3rem, 5cqi, 1.8rem);
   color: var(--light-text-color);
   outline: transparent;
 }
@@ -52,7 +52,7 @@
 
 .searchIcon img {
   width: 2rem;
-  height: 2rem;
+  aspect-ratio: 1/1;
 }
 
 .loadingSpinner {
@@ -63,4 +63,22 @@
   border-radius: 50%;
   border: 5px solid transparent;
   border-bottom: 5px solid #0079ff;
+}
+
+@media screen and (min-width: 768px) {
+  .searchBar {
+    min-height: 6.9rem;
+    padding-left: 3.1rem;
+    padding-right: 1rem;
+    gap: 2.5rem;
+  }
+
+  .searchIcon img {
+    width: 2.4rem;
+  }
+
+  .searchBar button {
+    font-size: 1.6rem;
+    padding: .8em 1.5em;
+  }
 }
