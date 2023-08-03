@@ -28,7 +28,7 @@
 .searchBar input {
   background-color: transparent;
   width: 100%;
-  font-size: clamp(1.3rem, 5cqi, 1.8rem);
+  font-size: clamp(1.3rem, 5.5cqi, 1.8rem);
   color: var(--light-text-color);
   outline: transparent;
 }
