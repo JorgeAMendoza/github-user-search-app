@@ -12,6 +12,13 @@
     'image username'
     'image joined';
   grid-template-columns: auto 1fr;
+  container: user-info / inline-size;
+}
+
+@container user-info (width >= 49rem) {
+  .userInfo img {
+    min-width: 11.7rem;
+  }
 }
 
 .userInfo img {
@@ -22,25 +29,26 @@
   margin-right: 1.9rem;
 }
 
-.username {
-  grid-area: username;
-  padding-top: 0.2rem;
-}
-
-.username h2 {
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
-.username p {
-  font-size: 1.3rem;
-  color: var(--primary);
-}
-
 .userJoined {
   grid-area: joined;
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 4.5cqi, 1.5rem);
   padding-top: 0.5rem;
+  color: var(--text-color-light);
+}
+
+.usernameInfo {
+  grid-area: username;
+  margin-top: 0.2rem;
+}
+
+.usernameInfo h2 {
+  font-size: clamp(1.6rem, 5.5cqi, 2.6rem);
+  /* line-height: 1.5; */
+}
+
+.username {
+  font-size: clamp(1.3rem, 4.5cqi, 1.6rem);
+  color: var(--primary);
 }
 
 .userBio {
@@ -95,4 +103,19 @@
 
 .userLinks p[data-active='false'] {
   opacity: 0.5;
+}
+
+@media screen and (min-width: 768px) {
+  .userDisplay {
+    margin-block-start: 2.25rem;
+    padding: 2.5em 2.5em;
+  }
+
+  .userInfo img {
+    margin-right: 4rem;
+  }
+
+  .usernameInfo {
+    margin-top: 1.4rem;
+  }
 }

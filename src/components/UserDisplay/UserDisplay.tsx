@@ -22,13 +22,15 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
           alt={`github user ${userInfo.login}`}
           data-testid="userAvatar"
         />
-        <div className={style.username}>
+        <div className={style.usernameInfo}>
           <h2 data-testid="username">{userInfo.name}</h2>
-          <p data-testid="userhandle">@{userInfo.login}</p>
+          <p data-testid="userhandle" className={style.username}>
+            @{userInfo.login}
+          </p>
+          <p className={style.userJoined} data-testid="userJoined">
+            Joined {userInfo.created_at}
+          </p>
         </div>
-        <p className={style.userJoined} data-testid="userJoined">
-          Joined {userInfo.created_at}
-        </p>
       </div>
 
       <p className={style.userBio} data-testid="userBio">
