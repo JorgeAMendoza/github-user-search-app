@@ -78,7 +78,7 @@
   font-weight: bold;
   display: block;
   margin-block-start: 0.5rem;
-  font-size: clamp(1.6rem, 5.5cqi, 2.2rem);
+  font-size: clamp(1.6rem, 3.5cqi, 2.2rem);
 }
 
 .userLinks {
@@ -93,13 +93,32 @@
   display: grid;
   grid-template-columns: 2.5rem 1fr;
   align-items: center;
-  font-size: 1.3rem;
-  gap: 0.7rem;
+  font-size: clamp(1.3rem, 3cqi, 1.5rem);
+  gap: 1rem;
+}
+
+.userLinks p:nth-of-type(1) {
+  grid-area: location;
+}
+
+.userLinks p:nth-of-type(2) {
+  grid-area: website;
+}
+
+.userLinks p:nth-of-type(3) {
+  grid-area: twitter;
+}
+
+.userLinks p:nth-of-type(4) {
+  grid-area: company;
 }
 
 .userLinks p a {
   color: var(--text-color-light);
   text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .userLinks p[data-active='false'] {
@@ -144,7 +163,34 @@
     margin-right: 5.1rem;
   }
 
-  .userStats p span{
-    margin-top: .2rem;
+  .userStats p span {
+    margin-top: 0.2rem;
+  }
+
+  .userLinks {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      'location twitter'
+      'website company';
+    margin-block-start: 3rem;
+  }
+
+  .userLinks p {
+    align-self: center;
+  }
+
+  .userLinks > *:not(:last-of-type) {
+    margin-block-end: 0;
+  }
+
+  .userLinks p:nth-of-type(2),
+  .userLinks p:nth-of-type(4) {
+    margin-block-start: 2rem;
+  }
+
+  .userLinks p:nth-of-type(3),
+  .userLinks p:nth-of-type(4) {
+    margin-left: 2.8rem;
   }
 }
