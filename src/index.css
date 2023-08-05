@@ -1,5 +1,6 @@
 :root {
   --primary: #0079ff;
+  --error-red: #f74646;
 }
 
 html {

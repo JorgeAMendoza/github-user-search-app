@@ -40,7 +40,11 @@ const SearchBar = ({ setUsername, loading, error }: SearchBarProps) => {
         />
       </label>
 
-      {error ? <p data-testid="errorMessage">{error.message}</p> : null}
+      {error ? (
+        <p data-testid="errorMessage" className={style.errorMessage}>
+          {error.message}
+        </p>
+      ) : null}
 
       <button type="submit" data-testid="userSearchButton">
         Search
