@@ -27,6 +27,7 @@ const UserDisplay = ({ userInfo }: UserDisplayProps) => {
           src={userInfo.avatar_url}
           alt={`github user ${userInfo.login}`}
           data-testid="userAvatar"
+          className={style.userImageMobile}
         />
         <h2 data-testid="username">{userInfo.name}</h2>
         <p data-testid="userhandle" className={style.username}>
