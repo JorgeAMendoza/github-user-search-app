@@ -10,11 +10,11 @@
 }
 
 .themeButton[data-theme='dark']:hover,
-.themeButton[data-theme='dark']:focus {
+.themeButton[data-theme='dark']:active {
   color: var(--theme-button-hover);
 }
 
 .themeButton[data-theme='light']:hover,
-.themeButton[data-theme='light']:focus {
+.themeButton[data-theme='light']:active {
   color: var(--theme-button-hover);
 }

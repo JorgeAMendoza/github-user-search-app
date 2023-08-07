@@ -55,7 +55,7 @@
 }
 
 .searchBar button:hover,
-.searchBar button:focus {
+.searchBar button:active {
   background-color: var(--primary-light);
 }
 
