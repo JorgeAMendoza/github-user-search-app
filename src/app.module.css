@@ -20,3 +20,10 @@
     padding-top: 14rem;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-top: 14.5rem;
+    width: 73rem;
+  }
+}

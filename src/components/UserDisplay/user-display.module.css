@@ -6,6 +6,14 @@
   box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
+.userImageDesktop {
+  display: none;
+  width: 11.7rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  grid-area: image;
+}
+
 .userInfo {
   display: grid;
   grid-template-areas:
@@ -41,7 +49,7 @@
   margin-top: 0.2rem;
 }
 
-.usernameInfo h2 {
+.userInfo h2 {
   font-size: clamp(1.6rem, 5.5cqi, 2.6rem);
   /* line-height: 1.5; */
 }
@@ -192,5 +200,55 @@
   .userLinks p:nth-of-type(3),
   .userLinks p:nth-of-type(4) {
     margin-left: 2.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .userImageDesktop {
+    display: block;
+    margin-right: 3.6rem;
+  }
+
+  .userDisplay {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      'image userInfo'
+      'image bio'
+      'image stats'
+      'image links';
+    padding: 3em;
+  }
+
+  .userInfo {
+    grid-template-areas:
+      'username joined'
+      'username joined';
+  }
+
+  .userInfo img {
+    display: none;
+  }
+
+  .userInfo h2 {
+    margin-top: -0.5rem;
+  }
+
+  .userJoined {
+    justify-self: end;
+  }
+
+  .userLinks {
+    margin-block-start: 3.7rem;
+  }
+
+  .userLinks p:nth-of-type(3),
+  .userLinks p:nth-of-type(4) {
+    margin-left: 3.1rem;
+  }
+
+  .userLinks p:nth-of-type(2),
+  .userLinks p:nth-of-type(4) {
+    margin-block-start: 1.8rem;
   }
 }
