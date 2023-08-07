@@ -129,6 +129,11 @@
   text-overflow: ellipsis;
 }
 
+.userLinks p a:hover,
+.userLinks p a:focus {
+  text-decoration: underline;
+}
+
 .userLinks p[data-active='false'] {
   opacity: 0.5;
 }

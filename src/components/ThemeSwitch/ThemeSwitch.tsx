@@ -27,6 +27,7 @@ const ThemeSwitch = () => {
           else setTheme('light');
         }}
         aria-label={`Toggle theme to ${theme === 'light' ? 'dark' : 'light'}}`}
+        data-theme={theme}
       >
         {theme === 'light' ? 'Dark' : 'Light'}{' '}
         {theme === 'light' ? <MoonIcon /> : <SunIcon />}

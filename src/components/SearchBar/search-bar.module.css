@@ -54,6 +54,11 @@
   grid-area: button;
 }
 
+.searchBar button:hover,
+.searchBar button:focus {
+  background-color: var(--primary-light);
+}
+
 .searchIcon img {
   width: 2rem;
   aspect-ratio: 1/1;
