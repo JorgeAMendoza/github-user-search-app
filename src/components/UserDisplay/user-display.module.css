@@ -18,6 +18,7 @@
   display: grid;
   grid-template-areas:
     'image username'
+    'image handle'
     'image joined';
   grid-template-columns: auto 1fr;
   container: user-info / inline-size;
@@ -51,7 +52,6 @@
 
 .userInfo h2 {
   font-size: clamp(1.6rem, 5.5cqi, 2.6rem);
-  /* line-height: 1.5; */
 }
 
 .username {
@@ -145,13 +145,6 @@
     padding: 2.5em 2.5em;
   }
 
-  .userInfo {
-    grid-template-areas:
-      'image username'
-      'image handle'
-      'image joined';
-  }
-
   .userInfo h2 {
     align-self: end;
     padding-top: 0.5rem;
@@ -242,7 +235,7 @@
   .userInfo {
     grid-template-areas:
       'username joined'
-      'username joined';
+      'handle joined';
   }
 
   .userInfo img {
@@ -250,11 +243,13 @@
   }
 
   .userInfo h2 {
-    margin-top: -0.5rem;
+    margin-top: -.9rem;
+    align-self: start;
   }
 
   .userJoined {
     justify-self: end;
+    margin: 0;
   }
 
   .userLinks {
