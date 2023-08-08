@@ -1,3 +1,12 @@
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .container {
   width: min(87%, 57.3rem);
   margin: 0 auto;
@@ -13,6 +22,17 @@
 .header h1 {
   font-size: 2.6rem;
   color: var(--title-color);
+}
+
+.loadingSpinner {
+  width: 30%;
+  aspect-ratio: 1/1;
+  border: 5px solid var(--background-color);
+  border-bottom: 5px solid var(--primary);
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+  margin: 0 auto;
+  margin-top: 5rem;
 }
 
 @media screen and (min-width: 768px) {

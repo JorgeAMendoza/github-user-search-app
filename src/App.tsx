@@ -28,7 +28,9 @@ function App() {
       </div>
 
       <SearchBar setUsername={setUser} loading={isLoading} error={error} />
-      {data === undefined ? <p>loading...</p> : null}
+      {data === undefined ? (
+        <div className={styled.loadingSpinner}></div>
+      ) : null}
       {data ? <UserDisplay userInfo={data} /> : null}
     </main>
   );
