@@ -26,17 +26,16 @@ describe('inital page load', () => {
   });
 
   it('should load page with octocat information and user preferred theme', () => {
-    // test the color scheme
-    // const { matches: prefersDark } = window.matchMedia(
-    //   '(prefers-color-scheme: dark)'
-    // );
-    // if (prefersDark) {
-    //   cy.get('body').should('have.css', 'background-color', hexToRgb('141D2F'));
-    //   cy.get('@themeButton').should('contain.text', 'LIGHT');
-    // } else {
-    //   cy.get('body').should('have.css', 'background-color', hexToRgb('F6F8FF'));
-    //   cy.get('@themeButton').should('contain.text', 'DARK');
-    // }
+    const { matches: prefersDark } = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    );
+    if (prefersDark) {
+      cy.get('body').should('have.css', 'background-color', hexToRgb('141D2F'));
+      cy.get('@themeButton').should('contain.text', 'Light');
+    } else {
+      cy.get('body').should('have.css', 'background-color', hexToRgb('F6F8FF'));
+      cy.get('@themeButton').should('contain.text', 'Dark');
+    }
 
     // test the octocat information
     cy.get('@userSearchInput')
