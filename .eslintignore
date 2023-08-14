@@ -1,0 +1,6 @@
+node-modules/
+dist
+.prettierrc
+.eslintrc
+.env
+vite.config.ts

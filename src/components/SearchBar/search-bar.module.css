@@ -1,0 +1,100 @@
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.searchBar {
+  background-color: var(--searchbar-background);
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  grid-template-areas: 'icon search error button';
+  align-items: center;
+  border-radius: 15px;
+  min-height: 6rem;
+  padding-left: 1.5rem;
+  padding-right: 0.7rem;
+  margin-block-start: 3.5rem;
+  gap: 0.9rem;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.searchBar label {
+  container-type: inline-size;
+}
+
+.searchBar input {
+  background-color: transparent;
+  width: 100%;
+  font-size: clamp(1.3rem, 5.5cqi, 1.8rem);
+  color: var(--light-text-color);
+  outline: transparent;
+  grid-area: search;
+}
+
+.searchBar input::placeholder {
+  color: var(--light-text-color);
+  outline: transparent;
+  font-size: inherit;
+  text-overflow: ellipsis;
+}
+
+.searchBar button {
+  background-color: var(--primary);
+  font-weight: bold;
+  font-size: 1.4rem;
+  justify-content: end;
+  padding: 0.9em 1.2em;
+  border-radius: 10px;
+  color: #fff;
+  grid-area: button;
+}
+
+.searchBar button:hover,
+.searchBar button:active {
+  background-color: var(--primary-light);
+}
+
+.searchIcon img {
+  width: 2rem;
+  aspect-ratio: 1/1;
+  grid-area: icon;
+}
+
+.loadingSpinner {
+  animation: spinner 1.5s linear infinite;
+  background-color: transparent;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-bottom: 5px solid #0079ff;
+}
+
+.errorMessage {
+  font-size: clamp(1.2rem, 2.5cqi, 1.5rem);
+  color: var(--error-red);
+  grid-area: error;
+}
+
+@media screen and (min-width: 768px) {
+  .searchBar {
+    min-height: 6.9rem;
+    padding-left: 3.1rem;
+    padding-right: 1rem;
+    gap: 2.5rem;
+  }
+
+  .searchIcon img {
+    width: 2.4rem;
+  }
+
+  .searchBar button {
+    font-size: 1.6rem;
+    padding: 0.8em 1.5em;
+  }
+}
