@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-import hexToRgb from '../utils/hex-to-rgb';
 
 describe('inital page load', () => {
   beforeEach(() => {
@@ -25,19 +24,7 @@ describe('inital page load', () => {
     cy.get('[data-testid="userCompany"]').as('userCompany');
   });
 
-  it('should load page with octocat information and user preferred theme', () => {
-    // test the color scheme
-    // const { matches: prefersDark } = window.matchMedia(
-    //   '(prefers-color-scheme: dark)'
-    // );
-    // if (prefersDark) {
-    //   cy.get('body').should('have.css', 'background-color', hexToRgb('141D2F'));
-    //   cy.get('@themeButton').should('contain.text', 'LIGHT');
-    // } else {
-    //   cy.get('body').should('have.css', 'background-color', hexToRgb('F6F8FF'));
-    //   cy.get('@themeButton').should('contain.text', 'DARK');
-    // }
-
+  it('should load page with octocat information', () => {
     // test the octocat information
     cy.get('@userSearchInput')
       .find('input')
