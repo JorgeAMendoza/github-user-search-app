@@ -1,0 +1,20 @@
+.themeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  color: var(--text-color);
+}
+
+.themeButton[data-theme='dark']:hover,
+.themeButton[data-theme='dark']:active {
+  color: var(--theme-button-hover);
+}
+
+.themeButton[data-theme='light']:hover,
+.themeButton[data-theme='light']:active {
+  color: var(--theme-button-hover);
+}

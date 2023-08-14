@@ -1,0 +1,268 @@
+.userDisplay {
+  background-color: var(--display-background);
+  margin-block-start: 1.6rem;
+  border-radius: 15px;
+  padding: 2em 1.5em;
+  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
+}
+
+.userImageDesktop {
+  display: none;
+  width: 11.7rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  grid-area: image;
+}
+
+.userInfo {
+  display: grid;
+  grid-template-areas:
+    'image username'
+    'image handle'
+    'image joined';
+  grid-template-columns: auto 1fr;
+  container: user-info / inline-size;
+}
+
+@container user-info (width >= 49rem) {
+  .userInfo img {
+    min-width: 11.7rem;
+  }
+}
+
+.userImageMobile {
+  border-radius: 50%;
+  width: 7rem;
+  aspect-ratio: 1/1;
+  grid-area: image;
+  margin-right: 1.9rem;
+}
+
+.userJoined {
+  grid-area: joined;
+  font-size: clamp(1.3rem, 4.5cqi, 1.5rem);
+  padding-top: 0.5rem;
+  color: var(--text-color-light);
+}
+
+.usernameInfo {
+  grid-area: username;
+  margin-top: 0.2rem;
+}
+
+.userInfo h2 {
+  font-size: clamp(1.6rem, 5.5cqi, 2.6rem);
+}
+
+.username {
+  font-size: clamp(1.3rem, 4.5cqi, 1.6rem);
+  color: var(--primary);
+  grid-area: handle;
+}
+
+.userBio {
+  font-size: clamp(1.3rem, 3.5cqi, 1.5rem);
+  margin-block-start: 3.4rem;
+  line-height: 1.9;
+}
+
+.userStats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  background-color: var(--repo-background);
+  border-radius: 10px;
+  margin-block-start: 2.4rem;
+  min-height: 8.5rem;
+  padding-top: 1.2em;
+}
+
+.userStats p {
+  text-align: center;
+  font-size: clamp(1.1rem, 3.5cqi, 1.3rem);
+}
+
+.userStats p span {
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: block;
+  margin-block-start: 0.5rem;
+  font-size: clamp(1.6rem, 3.5cqi, 2.2rem);
+}
+
+.userLinks {
+  margin-block-start: 2.4rem;
+}
+
+.userLinks > *:not(:last-child) {
+  margin-block-end: 1.6rem;
+}
+
+.userLinks p {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  align-items: center;
+  font-size: clamp(1.3rem, 3cqi, 1.5rem);
+  gap: 1rem;
+}
+
+.userLinks p:nth-of-type(1) {
+  grid-area: location;
+}
+
+.userLinks p:nth-of-type(2) {
+  grid-area: website;
+}
+
+.userLinks p:nth-of-type(3) {
+  grid-area: twitter;
+}
+
+.userLinks p:nth-of-type(4) {
+  grid-area: company;
+}
+
+.userLinks p a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.userLinks p a:hover,
+.userLinks p a:focus {
+  text-decoration: underline;
+}
+
+.userLinks p[data-active='false'] {
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 768px) {
+  .userDisplay {
+    margin-block-start: 2.25rem;
+    padding: 2.5em 2.5em;
+  }
+
+  .userInfo h2 {
+    align-self: end;
+    padding-top: 0.5rem;
+  }
+
+  .userInfo img {
+    margin-right: 4rem;
+  }
+
+  .userJoined {
+    align-self: start;
+    margin-top: -1rem;
+  }
+
+  .userBio {
+    margin-block-start: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .userStats {
+    margin-block-start: 3.3rem;
+    justify-content: start;
+    padding-top: 1.6rem;
+    padding-left: 3rem;
+  }
+
+  .userStats p {
+    text-align: left;
+  }
+
+  .userStats p:not(:last-of-type) {
+    margin-right: 7rem;
+  }
+
+  .userStats p:nth-of-type(2) {
+    margin-right: 5.1rem;
+  }
+
+  .userStats p span {
+    margin-top: 0.2rem;
+  }
+
+  .userLinks {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      'location twitter'
+      'website company';
+    margin-block-start: 3rem;
+  }
+
+  .userLinks p {
+    align-self: center;
+  }
+
+  .userLinks > *:not(:last-of-type) {
+    margin-block-end: 0;
+  }
+
+  .userLinks p:nth-of-type(2),
+  .userLinks p:nth-of-type(4) {
+    margin-block-start: 2rem;
+  }
+
+  .userLinks p:nth-of-type(3),
+  .userLinks p:nth-of-type(4) {
+    margin-left: 2.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .userImageDesktop {
+    display: block;
+    margin-right: 3.6rem;
+  }
+
+  .userDisplay {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      'image userInfo'
+      'image bio'
+      'image stats'
+      'image links';
+    padding: 3em;
+  }
+
+  .userInfo {
+    grid-template-areas:
+      'username joined'
+      'handle joined';
+  }
+
+  .userInfo img {
+    display: none;
+  }
+
+  .userInfo h2 {
+    margin-top: -.9rem;
+    align-self: start;
+  }
+
+  .userJoined {
+    justify-self: end;
+    margin: 0;
+  }
+
+  .userLinks {
+    margin-block-start: 3.7rem;
+  }
+
+  .userLinks p:nth-of-type(3),
+  .userLinks p:nth-of-type(4) {
+    margin-left: 3.1rem;
+  }
+
+  .userLinks p:nth-of-type(2),
+  .userLinks p:nth-of-type(4) {
+    margin-block-start: 1.8rem;
+  }
+}
